@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class PositiveLoginTest extends TestBase {
 
-
+//very useful method
     @Test
     public void logIN() {
         String browser = ConfigurationReader.getProperty("browser");
@@ -77,6 +77,7 @@ public class PositiveLoginTest extends TestBase {
         Assert.assertNotEquals(currentUrl,driver.getCurrentUrl());
         //7.Click on Login button
         homepage.login1.click();
+
     }
    
        
