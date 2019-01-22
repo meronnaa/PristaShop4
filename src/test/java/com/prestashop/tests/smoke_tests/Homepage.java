@@ -74,6 +74,22 @@ public class Homepage {
     public WebElement quantiyDefault;
     @FindBy(xpath = "//span[@id='layer_cart_product_attributes']")
     public WebElement sizeDefault;
+    @FindBy(xpath = "(//a[@class='product-name'])[3]")
+    public WebElement pdtNameBefore;
+    @FindBy(xpath = "(//span[@itemprop='price'])[6]")
+    public WebElement pdtPriceBef;
+    @FindBy(xpath = "//span[@class='product-name']")
+    public WebElement pdtNameAfter;
+    @FindBy(xpath= "span[@id='layer_cart_product_price']")
+    public WebElement pdtPriceAfter;
+
+
+
+
+
+
+
+
 
 
     //WO-1: Positive Login Test   &&   WO-2: Negative Login TestWrong Username

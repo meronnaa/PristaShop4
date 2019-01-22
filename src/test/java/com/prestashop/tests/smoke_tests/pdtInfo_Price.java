@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class pdtInfo_Price extends TestBase {
 
     @Test
-    public void priceTest(){
+    public void priceTest() throws InterruptedException {
         String browser = ConfigurationReader.getProperty("browser");
         driver.get(ConfigurationReader.getProperty("url"));
         String productBeforeClick = homepage.prdName.getAttribute("innerText").trim();
@@ -27,7 +27,7 @@ public class pdtInfo_Price extends TestBase {
        // 6.Verify that size options are S, M, L
         String size1=homepage.sizes.getAttribute("values");
 
-
+Thread.sleep(1500);
 
 
 
@@ -42,9 +42,10 @@ public class pdtInfo_Price extends TestBase {
         //10.Verify that defaultsize is S
         Assert.assertTrue(homepage.sizeDefault.getAttribute("innerText").contains("S"));//************need further gidance
 
-
         //11.Verify that same name and price displayed as on the home page
-
+        Assert.assertEquals(homepage.pdtNameBefore.getAttribute("innerText"),homepage.pdtNameAfter.getAttribute("innerText"));
+       // Assert.assertEquals(homepage.pdtPriceBef.getAttribute("value"),homepage.pdtPriceAfter.getAttribute("value"));
+        System.out.println(homepage.pdtPriceBef.getText()+"mmmm"+ homepage.pdtPriceAfter.getAttribute("value"));
 
 
 
