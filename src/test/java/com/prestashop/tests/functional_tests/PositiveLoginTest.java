@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class PositiveLoginTest extends TestBase {
 
-
+//add comments
     @Test
     public void logIN() {
         String browser = ConfigurationReader.getProperty("browser");
