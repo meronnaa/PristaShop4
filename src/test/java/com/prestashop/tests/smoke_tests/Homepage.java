@@ -1,10 +1,17 @@
 package com.prestashop.tests.smoke_tests;
 
 import Utilities.Driver;
+import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.XMLFormatter;
 
 public class Homepage {
     public Homepage(){
@@ -74,23 +81,10 @@ public class Homepage {
     public WebElement quantiyDefault;
     @FindBy(xpath = "//span[@id='layer_cart_product_attributes']")
     public WebElement sizeDefault;
-    @FindBy(xpath = "(//a[@class='product-name'])[3]")
-    public WebElement pdtNameBefore;
-    @FindBy(xpath = "(//span[@itemprop='price'])[6]")
-    public WebElement pdtPriceBef;
     @FindBy(xpath = "//span[@class='product-name']")
     public WebElement pdtNameAfter;
-    @FindBy(xpath= "span[@id='layer_cart_product_price']")
+    @FindBy(xpath= "//span[@id='layer_cart_product_price']")
     public WebElement pdtPriceAfter;
-
-
-
-
-
-
-
-
-
 
     //WO-1: Positive Login Test   &&   WO-2: Negative Login TestWrong Username
     @FindBy(id = "ctl00_MainContent_username")
@@ -101,6 +95,128 @@ public class Homepage {
     public WebElement login1;
 
     //WO-2: Negative Login TestWrong Username
+
+
+//====================PRISTA SHOP TWO========================
+    @FindBy(xpath = "//a[@class='login']")
+    public WebElement signIn;
+    @FindBy(id = "email_create")
+    public WebElement newEmail;
+    @FindBy(id = "email")
+    public WebElement neEmail;
+    @FindBy(id = "customer_firstname")
+    public WebElement firstName;
+    @FindBy(id="customer_lastname")
+    public WebElement lastname;
+    @FindBy(id="passwd")
+    public WebElement passWrd;
+    //address info
+
+    @FindBy(id="address1")
+    public WebElement addresss;
+    @FindBy(id="city")
+    public WebElement city;
+    @FindBy(id="id_state")
+    public WebElement state;
+
+   // Select select=new Select(state);
+    @FindBy(id = "postcode")
+    public WebElement zipCode;
+    @FindBy(id = "phone_mobile")
+    public WebElement phoneNum;
+    @FindBy(id="alias")
+    public WebElement aliasAddres;
+    @FindBy(xpath = "(//i[@class='icon-chevron-right right'])[3]")
+    public WebElement registerButton;
+    @FindBy(xpath = "(//div[@class='header_user_info'])[1]")
+    public WebElement nameOnTopp;
+    @FindBy(xpath = "//span[.='My personal information']")
+    public WebElement clickOnpersonalInfo;
+    @FindBy(id = "firstname")
+    public WebElement secFirName;
+    @FindBy(xpath = "//div[@class='required form-group'][2]/input")
+    public WebElement secLastName;
+    @FindBy(xpath = "(//a[@class='btn btn-default button button-small'])[2]")
+    public WebElement backToaccouButton;
+    @FindBy(xpath = "(//input[@class='is_required validate form-control'])[3]")
+    public WebElement emailConfiramtion;
+    @FindBy(xpath = "//span[.='My addresses']")
+    public WebElement clickOnAddress;
+    @FindBy(xpath = "(//span[@class='address_name'])[1]")
+    public WebElement addName;
+    @FindBy(xpath = "(//span[@class='address_name'])[2]")
+    public WebElement addlastName;
+    @FindBy(xpath = "//span[@class='address_address1']")
+    public WebElement streetAdd;
+    @FindBy(xpath = "(//div[@class='col-xs-12 col-sm-6 address']/ul/li)[5]")
+    public WebElement allAddress;
+    @FindBy(xpath = "//a[@class='logout']")
+   public WebElement signOut;
+    @FindBy(xpath = "(//input[@class='is_required validate account_input form-control'])[2]")
+    public WebElement loginUsingValidEmail;
+    @FindBy(xpath = "(//input[@class='is_required validate account_input form-control'])[3]")
+    public WebElement loginUsingValidPass;
+
+
+    //===============Error MessageValidation: First name=====================
+    @FindBy(xpath = "//div[@class='alert alert-danger']/ol")
+    public WebElement firstNameRequiredErrorMege;
+
+    //cart details
+    public void open(){
+        Driver.getDriver().get("http://automationpractice.com/index.php");
+
+    }
+    @FindBy(xpath = "//div[@class='button-container']/a")
+    public WebElement proceedtocart;
+
+    @FindBy(xpath = "//i[@class='icon-plus']")
+    public WebElement addIcon;//(adding different quantity)
+
+    @FindBy(xpath = "//select[@class='form-control attribute_select no-print']")
+    public WebElement selectingSize;
+
+    @FindBy(xpath = "//span[.='Add to cart']")
+    public WebElement addPdtToCart;
+    @FindBy(xpath = "//div[@class='layer_cart_product col-xs-12 col-md-6']/h2")
+    public WebElement succesMessage;
+    @FindBy(xpath = "//span[@class='cross']")
+    public WebElement xbutton;
+    @FindBy(xpath ="//img[@class='logo img-responsive']")
+    public WebElement companyLogo;
+    @FindBy(xpath = "(//div[@class='product-image-container'])[7]")
+    public WebElement pdtOnSale;
+@FindBy(xpath = "//*[@id='quantity_wanted_p']/a[2]")
+public WebElement addIcon2;
+    @FindBy(className = "fancybox-iframe")
+    public WebElement ifram2;
+   @FindBy(css = "button.exclusive")
+    public WebElement addPdt2;
+    @FindBy(xpath = "//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")
+    public WebElement hoverOverCart1;
+    @FindBy(xpath = "(//span[@class='price'])[1]")
+    public WebElement pricePdt1;
+    @FindBy(xpath = "(//span[@class='price'])[2]")
+    public WebElement pricePdt2;
+    @FindBy(xpath = "//span[@class='price cart_block_total ajax_block_cart_total']")
+    public WebElement totalPrice;
+    @FindBy(xpath = "//div[@class='cart-prices-line first-line']/span[1]")
+    public WebElement shippingPrice;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 public class PositiveLoginTest extends TestBase {
 
+
 //very useful method
     @Test
     public void logIN() {
@@ -75,8 +76,7 @@ public class PositiveLoginTest extends TestBase {
         Assert.assertNotEquals(driver.getTitle(),"Web Orders Login");
         //9.Verify the current url equals the string saved in step 4
         Assert.assertNotEquals(currentUrl,driver.getCurrentUrl());
-        //7.Click on Login button
-        homepage.login1.click();
+
 
     }
    

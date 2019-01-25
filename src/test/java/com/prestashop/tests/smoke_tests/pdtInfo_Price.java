@@ -16,7 +16,7 @@ public class pdtInfo_Price extends TestBase {
         String itempriceBef=homepage.itemPricebefore.getAttribute("value");
          homepage.clkPdt.click();
         //3.Verify that same name and price displayed as on the home page
-
+        Thread.sleep(1500);
         driver.switchTo().frame(homepage.iFram);
         Assert.assertEquals(itempriceBef,homepage.itempriceAfter.getAttribute("value"));
         Assert.assertEquals(productBeforeClick,homepage.prdName1.getAttribute("title"));
@@ -27,7 +27,7 @@ public class pdtInfo_Price extends TestBase {
        // 6.Verify that size options are S, M, L
         String size1=homepage.sizes.getAttribute("values");
 
-Thread.sleep(1500);
+
 
 
 
@@ -43,10 +43,8 @@ Thread.sleep(1500);
         Assert.assertTrue(homepage.sizeDefault.getAttribute("innerText").contains("S"));//************need further gidance
 
         //11.Verify that same name and price displayed as on the home page
-        Assert.assertEquals(homepage.pdtNameBefore.getAttribute("innerText"),homepage.pdtNameAfter.getAttribute("innerText"));
-       // Assert.assertEquals(homepage.pdtPriceBef.getAttribute("value"),homepage.pdtPriceAfter.getAttribute("value"));
-        System.out.println(homepage.pdtPriceBef.getText()+"mmmm"+ homepage.pdtPriceAfter.getAttribute("value"));
-
+       Assert.assertEquals(productBeforeClick ,homepage.pdtNameAfter.getText());
+       Assert.assertEquals(itempriceBef,homepage.pdtPriceAfter.getAttribute("value"));
 
 
 
