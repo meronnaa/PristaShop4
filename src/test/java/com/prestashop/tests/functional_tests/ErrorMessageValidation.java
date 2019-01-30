@@ -81,7 +81,6 @@ public class ErrorMessageValidation extends TestBase {
             Thread.sleep(1000);
             homepage.xbutton.click();
             //9.Click on the company logo
-
             homepage.companyLogo.click();
 
           //  10.Click on any productthat is onsale
@@ -132,7 +131,7 @@ public class ErrorMessageValidation extends TestBase {
           actions.moveToElement(  homepage.hoverOverCart1).clickAndHold().perform();
           //17.Verify that correct total is displayed
 
-            String pTotal=homepage.totalPrice.getAttribute("innerText").replace("$","");
+            String pTotal=homepage.totalPrice.getAttribute("innerText").replace("$","");//i can use substring(1)
             Double ppTotal=Double.parseDouble(pTotal);
 
             System.out.println(ppTotal);
