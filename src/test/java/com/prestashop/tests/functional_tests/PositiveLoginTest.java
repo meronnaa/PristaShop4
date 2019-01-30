@@ -76,8 +76,12 @@ public class PositiveLoginTest extends TestBase {
         Assert.assertNotEquals(driver.getTitle(),"Web Orders Login");
         //9.Verify the current url equals the string saved in step 4
         Assert.assertNotEquals(currentUrl,driver.getCurrentUrl());
+<<<<<<< HEAD
 
 
+=======
+       
+>>>>>>> c739975cd52156f721541016b01f14314de66e08
     }
    
        
